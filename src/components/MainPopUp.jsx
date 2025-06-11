@@ -657,6 +657,204 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//present Code 
+
+
+// "use client"
+
+// import { useState } from "react"
+// import { X, Shield, CheckCircle, AlertTriangle, Phone, HelpCircle } from "lucide-react"
+
+// export default function MainPopUp() {
+//   const [showPopup, setShowPopup] = useState(true)
+
+//   // Close when clicking outside the inner box
+//   const handlePopupClick = (e) => {
+//     if (e.target === e.currentTarget) {
+//       setShowPopup(false)
+//     }
+//   }
+
+//   const closePopup = () => {
+//     setShowPopup(false)
+//   }
+
+//   const handleCallNow = () => {
+//     window.open("tel:+18282421244", "_self")
+//   }
+
+//   if (!showPopup) return null
+
+//   return (
+//     <div
+//       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4 md:p-6"
+//       onClick={handlePopupClick}
+//     >
+//       <div className="bg-white rounded-lg sm:rounded-xl md:rounded-2xl w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-2 sm:mx-4 relative animate-popup-slide-up shadow-2xl max-h-[95vh] sm:max-h-[90vh] flex flex-col">
+//         {/* Close button */}
+//         <button
+//           onClick={closePopup}
+//           className="absolute top-2 right-2 sm:top-3 sm:right-3 md:top-4 md:right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200 z-10 p-1.5 sm:p-2 rounded-full hover:bg-gray-100 touch-manipulation"
+//           aria-label="Close popup"
+//         >
+//           <X size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
+//         </button>
+
+//         {/* Header */}
+//         <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 sm:p-4 md:p-5 rounded-t-lg sm:rounded-t-xl md:rounded-t-2xl flex-shrink-0">
+//           <div className="flex items-center space-x-2 sm:space-x-3">
+//             <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0">
+//               <Shield size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
+//             </div>
+//             <div className="min-w-0 flex-1">
+//               <h2 className="text-base sm:text-lg md:text-xl font-bold leading-tight">Facebook Security Alert</h2>
+//               <p className="text-blue-100 text-xs sm:text-sm mt-0.5">Protect your account with these steps</p>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Content - Scrollable */}
+//         <div className="p-3 sm:p-4 md:p-5 overflow-y-auto flex-1">
+//           {/* Why you're seeing alerts */}
+//           <div className="mb-3 sm:mb-4">
+//             <div className="flex items-center space-x-2 mb-2">
+//               <AlertTriangle size={16} className="sm:w-5 sm:h-5 text-orange-500 flex-shrink-0" />
+//               <h3 className="font-bold text-gray-800 text-sm sm:text-base md:text-lg">
+//                 Why You're Seeing These Alerts
+//               </h3>
+//             </div>
+//             <div className="bg-orange-50 rounded-lg p-2 sm:p-3 space-y-1.5 sm:space-y-2">
+//               <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed">
+//                 <span className="font-semibold">1. Unusual Sign-In:</span> Logins from unexpected locations
+//               </p>
+//               <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed">
+//                 <span className="font-semibold">2. Usage Patterns:</span> Sudden activity spikes or changes
+//               </p>
+//               <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed">
+//                 <span className="font-semibold">3. Multiple Sessions:</span> More simultaneous logins than usual
+//               </p>
+//             </div>
+//           </div>
+
+//           {/* What to do */}
+//           <div className="mb-3 sm:mb-4">
+//             <div className="flex items-center space-x-2 mb-2">
+//               <CheckCircle size={16} className="sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
+//               <h3 className="font-bold text-gray-800 text-sm sm:text-base md:text-lg">What You Should Do Now</h3>
+//             </div>
+//             <div className="bg-green-50 rounded-lg p-2 sm:p-3 space-y-2 sm:space-y-3">
+//               <div className="flex items-start space-x-2 sm:space-x-3">
+//                 <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+//                   <span className="text-green-600 font-bold text-xs sm:text-sm">1</span>
+//                 </div>
+//                 <div className="min-w-0 flex-1">
+//                   <h4 className="font-semibold text-gray-800 text-xs sm:text-sm md:text-base">Change Your Password</h4>
+//                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Create a strong, unique password</p>
+//                 </div>
+//               </div>
+
+//               <div className="flex items-start space-x-2 sm:space-x-3">
+//                 <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+//                   <span className="text-green-600 font-bold text-xs sm:text-sm">2</span>
+//                 </div>
+//                 <div className="min-w-0 flex-1">
+//                   <h4 className="font-semibold text-gray-800 text-xs sm:text-sm md:text-base">Enable 2FA</h4>
+//                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">Add extra security to login</p>
+//                 </div>
+//               </div>
+
+//               <div className="flex items-start space-x-2 sm:space-x-3">
+//                 <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+//                   <span className="text-green-600 font-bold text-xs sm:text-sm">3</span>
+//                 </div>
+//                 <div className="min-w-0 flex-1">
+//                   <h4 className="font-semibold text-gray-800 text-xs sm:text-sm md:text-base">Logout All Devices</h4>
+//                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">End all active sessions</p>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Important note */}
+//           <div className="mb-3 sm:mb-4">
+//             <div className="bg-blue-50 border-l-4 border-blue-400 p-2 sm:p-3 rounded-r-lg">
+//               <div className="flex items-start space-x-2">
+//                 <HelpCircle size={14} className="sm:w-4 sm:h-4 md:w-5 md:h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+//                 <div className="min-w-0 flex-1">
+//                   <p className="text-blue-800 text-xs sm:text-sm leading-relaxed">
+//                     <span className="font-semibold">Important:</span> These alerts are cautionary and help protect your
+//                     account.
+//                   </p>
+//                   <p className="text-blue-700 text-xs sm:text-sm mt-1 leading-relaxed">
+//                     Account sharing may trigger alerts. See our{" "}
+//                     <span className="underline cursor-pointer">Account Sharing Policy</span>.
+//                   </p>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Call to action section */}
+//           {/* <div className="bg-gray-50 rounded-lg p-3 sm:p-4 mb-3 sm:mb-4">
+//             <div className="text-center">
+//               <h4 className="font-bold text-gray-800 text-sm sm:text-base md:text-lg mb-1">Need Help?</h4>
+//               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+//                 Our support team is available 24/7 to assist you.
+//               </p>
+//             </div>
+//           </div> */}
+//         </div>
+
+//         {/* Call Now Button - Fixed at bottom */}
+//         <div className="p-3 sm:p-4 md:p-5 pt-0 flex-shrink-0">
+//           <button
+//             onClick={handleCallNow}
+//             className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 active:from-blue-800 active:to-blue-900 text-white py-3 sm:py-3.5 md:py-4 px-4 rounded-lg flex items-center justify-center space-x-2 transform hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg font-semibold text-sm sm:text-base touch-manipulation min-h-[44px] sm:min-h-[48px]"
+//           >
+//             <Phone size={16} className="sm:w-5 sm:h-5 flex-shrink-0" />
+//             <span className="truncate">Call Support: 1 (844) 403-0233</span>
+//           </button>
+//           <p className="text-xs sm:text-sm text-gray-500 text-center mt-2 leading-relaxed">
+//             Available 24/7 • Free consultation • Immediate assistance
+//           </p>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
+
+
+
+
+
+
+
 "use client"
 
 import { useState } from "react"
@@ -672,9 +870,9 @@ export default function MainPopUp() {
     }
   }
 
-  const closePopup = () => {
-    setShowPopup(false)
-  }
+  // const closePopup = () => {
+  //   setShowPopup(false)
+  // }
 
   const handleCallNow = () => {
     window.open("tel:+18282421244", "_self")
@@ -687,10 +885,10 @@ export default function MainPopUp() {
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4 md:p-6"
       onClick={handlePopupClick}
     >
-      <div className="bg-white rounded-lg sm:rounded-xl md:rounded-2xl w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-2 sm:mx-4 relative animate-popup-slide-up shadow-2xl max-h-[95vh] sm:max-h-[90vh] flex flex-col">
+      <div className="bg-white rounded-lg sm:rounded-xl md:rounded-2xl w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-2 sm:mx-4 relative animate-popup-slide-up shadow-2xl max-h-[95vh] sm:max-h-[90vh] flex flex-col min-w-0">
         {/* Close button */}
         <button
-          onClick={closePopup}
+          
           className="absolute top-2 right-2 sm:top-3 sm:right-3 md:top-4 md:right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200 z-10 p-1.5 sm:p-2 rounded-full hover:bg-gray-100 touch-manipulation"
           aria-label="Close popup"
         >
@@ -791,7 +989,7 @@ export default function MainPopUp() {
             </div>
           </div>
 
-          {/* Call to action section */}
+          {/* Call to action section - Commented out as in original */}
           {/* <div className="bg-gray-50 rounded-lg p-3 sm:p-4 mb-3 sm:mb-4">
             <div className="text-center">
               <h4 className="font-bold text-gray-800 text-sm sm:text-base md:text-lg mb-1">Need Help?</h4>
@@ -816,6 +1014,47 @@ export default function MainPopUp() {
           </p>
         </div>
       </div>
+      
+      {/* Additional CSS for enhanced mobile responsiveness */}
+      <style jsx>{`
+        /* Handle very small screens better */
+        @media (max-width: 374px) {
+          .max-w-xs {
+            max-width: calc(100vw - 16px);
+          }
+        }
+        
+        /* Improve touch targets on mobile */
+        @media (max-width: 640px) {
+          button {
+            min-height: 44px;
+          }
+        }
+        
+        /* Handle landscape mobile orientation */
+        @media (max-height: 500px) and (orientation: landscape) {
+          .max-h-[95vh] {
+            max-height: 90vh;
+          }
+        }
+        
+        /* Better scrolling on iOS */
+        .overflow-y-auto {
+          -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Prevent zoom on double tap */
+        * {
+          touch-action: manipulation;
+        }
+        
+        /* Better text readability on small screens */
+        @media (max-width: 320px) {
+          .text-xs {
+            font-size: 0.7rem;
+          }
+        }
+      `}</style>
     </div>
   )
 }
