@@ -861,7 +861,7 @@ export default function MainPopUp() {
   // }
 
   const handleCallNow = () => {
-    window.open("tel:+18282421244", "_self");
+    window.open("tel:+1 805 254 9565", "_self");
   };
 
   if (!showPopup) return null;
@@ -1031,7 +1031,7 @@ export default function MainPopUp() {
             className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 active:from-blue-800 active:to-blue-900 text-white py-3 sm:py-3.5 md:py-4 px-4 rounded-lg flex items-center justify-center space-x-2 transform hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg font-semibold text-sm sm:text-base touch-manipulation min-h-[44px] sm:min-h-[48px]"
           >
             <Phone size={16} className="sm:w-5 sm:h-5 flex-shrink-0" />
-            <span className="truncate">Call Support: 1 (182) 824-21244 </span>
+            <span className="truncate">Call Support:  </span>
           </button>
           <p className="text-xs sm:text-sm text-gray-500 text-center mt-2 leading-relaxed">
             Available 24/7 • Free consultation • Immediate assistance
