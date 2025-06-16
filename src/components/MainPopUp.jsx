@@ -861,7 +861,7 @@ export default function MainPopUp() {
   // }
 
   const handleCallNow = () => {
-    window.open("tel:+1 805 254 9565", "_self");
+    window.open("tel:+1 180 657 72186", "_self");
   };
 
   if (!showPopup) return null;
